@@ -62,6 +62,7 @@ class AiAnalysisService {
     }
 
     final request = http.MultipartRequest('POST', _analyzeUri);
+    request.headers['X-API-Key'] = ApiConfig.apiKey;
     try {
       request.files.add(
         await http.MultipartFile.fromPath(
