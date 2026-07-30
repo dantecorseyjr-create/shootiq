@@ -97,7 +97,7 @@ class ApiService {
     try {
       final uri = Uri.parse('$baseUrl/cleanup/$tempMediaId');
       final response = await http
-          .delete(uri)
+          .delete(uri, headers: {'X-API-Key': ApiConfig.apiKey})
           .timeout(const Duration(seconds: 10));
       if (response.statusCode >= 200 && response.statusCode < 300) {
         // ignore: avoid_print
@@ -206,6 +206,7 @@ class ApiService {
     String? dominantHand,
   }) async {
     final request = http.MultipartRequest('POST', Uri.parse(analyzeUrl));
+    request.headers['X-API-Key'] = ApiConfig.apiKey;
     request.files.add(
       await http.MultipartFile.fromPath(
         'file',

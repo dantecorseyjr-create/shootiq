@@ -2,6 +2,8 @@
 
 from __future__ import annotations
 
+import os
+import secrets
 import shutil
 import threading
 import time
@@ -11,7 +13,7 @@ from typing import Any, Optional
 
 import json
 
-from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
+from fastapi import Depends, FastAPI, File, Form, Header, HTTPException, Request, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
@@ -37,13 +39,34 @@ app = FastAPI(
     version="0.10.0-step5",
 )
 
+# The Flutter app is a native iOS/Android client, not a browser page, so it
+# never sends an Origin header and CORS never applies to its requests.
+# An empty allow_origins simply blocks arbitrary websites from calling this
+# API from client-side JS; it has no effect on the mobile app.
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],
-    allow_credentials=True,
-    allow_methods=["*"],
+    allow_origins=[],
+    allow_credentials=False,
+    allow_methods=["GET", "POST", "DELETE"],
     allow_headers=["*"],
 )
+
+# Shared-secret auth for non-public endpoints. Set via the SHOOTIQ_API_KEY
+# environment variable (systemd EnvironmentFile on the server) — never
+# hardcoded here and never committed to git.
+API_KEY = os.environ.get("SHOOTIQ_API_KEY")
+if not API_KEY:
+    raise RuntimeError(
+        "SHOOTIQ_API_KEY environment variable is not set. "
+        "Refusing to start with unprotected endpoints."
+    )
+
+
+async def require_api_key(x_api_key: Optional[str] = Header(default=None, alias="X-API-Key")) -> None:
+    if x_api_key is None:
+        raise HTTPException(status_code=401, detail="Missing API key")
+    if not secrets.compare_digest(x_api_key, API_KEY):
+        raise HTTPException(status_code=403, detail="Invalid API key")
 
 ALLOWED_EXTENSIONS = {".mp4", ".mov", ".avi", ".mkv", ".webm", ".m4v"}
 BASE_DIR = Path(__file__).resolve().parent
@@ -131,13 +154,13 @@ def health() -> dict[str, Any]:
     }
 
 
-@app.delete("/cleanup/{stem}")
+@app.delete("/cleanup/{stem}", dependencies=[Depends(require_api_key)])
 def cleanup_temp_media_endpoint(stem: str) -> dict[str, Any]:
     """Delete temporary server copies after the client saved results locally."""
     return cleanup_temp_media(stem)
 
 
-@app.post("/upload-test")
+@app.post("/upload-test", dependencies=[Depends(require_api_key)])
 async def upload_test(file: UploadFile = File(...)) -> dict[str, str]:
     filename = Path(file.filename or "shot.mp4").name
     save_path = UPLOADS_DIR / filename
@@ -242,7 +265,7 @@ async def _read_upload(
     return original_name, contents, temp_path
 
 
-@app.post("/analyze-pose")
+@app.post("/analyze-pose", dependencies=[Depends(require_api_key)])
 async def analyze_pose_only(
     request: Request,
     file: Optional[UploadFile] = File(None),
@@ -307,7 +330,7 @@ async def analyze_pose_only(
     }
 
 
-@app.post("/analyze")
+@app.post("/analyze", dependencies=[Depends(require_api_key)])
 async def analyze(
     request: Request,
     file: Optional[UploadFile] = File(None),

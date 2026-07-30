@@ -15,6 +15,11 @@ class ApiConfig {
     defaultValue: 'https://api.shootiqapp.com',
   );
 
+  /// Shared-secret sent as `X-API-Key` on protected backend requests.
+  /// Must be supplied at build time via `--dart-define=API_KEY=...` —
+  /// never hardcode a real key here or commit one to source control.
+  static const String apiKey = String.fromEnvironment('API_KEY');
+
   /// `POST` endpoint for shot analysis.
   static String get analyzeUrl => '$baseUrl/analyze';
 
