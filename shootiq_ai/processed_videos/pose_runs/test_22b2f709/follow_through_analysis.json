@@ -1,0 +1,10 @@
+{
+  "source_file": "/Users/macbook/Projects/shootiq/shootiq_ai/processed_videos/pose_runs/test_22b2f709/shot_angles.json",
+  "shooting_side": "right",
+  "elbow_alignment": {
+    "error": "No usable landmark data for elbow alignment analysis."
+  },
+  "follow_through": {
+    "error": "Could not determine release frame."
+  }
+}

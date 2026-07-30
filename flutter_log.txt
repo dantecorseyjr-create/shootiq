@@ -1,0 +1,201 @@
+---
+pid: 93266
+cwd: "/Users/macbook/Projects/shootiq"
+command: "export PATH=\"$HOME/flutter/bin:$PATH\" && flutter run -d macos"
+started_at: 2026-07-25T18:07:16.349Z
+running_for_ms: 755205   
+---
+Launching lib/main.dart on macOS in debug mode...
+The following plugins do not support Swift Package Manager for macos:
+  - sign_in_with_apple
+This will become an error in a future version of Flutter. Please contact the plugin maintainers to request Swift Package Manager adoption.
+Building macOS application...                                   
+✓ Built build/macos/Build/Products/Debug/shootiq.app
+2026-07-25 13:08:29.175 shootiq[93898:1000756] Running with merged UI and platform thread. Experimental.
+Failed to foreground app; open returned 1
+flutter: supabase.supabase_flutter: INFO: ***** Supabase init completed ***** 
+Syncing files to device macOS...                                   169ms
+
+Flutter run key commands.
+r Hot reload. 🔥🔥🔥
+R Hot restart.
+h List all available interactive commands.
+d Detach (terminate "flutter run" but leave application running).
+c Clear the screen
+q Quit (terminate the application on the device).
+
+A Dart VM Service on macOS is available at: http://127.0.0.1:50565/s1dg37DOhuA=/
+The Flutter DevTools debugger and profiler on macOS is available at: http://127.0.0.1:50565/s1dg37DOhuA=/devtools/?uri=ws://127.0.0.1:50565/s1dg37DOhuA=/ws
+flutter: supabase.auth: INFO: Refresh session 
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Session dashboard thumbnail skipped: MissingPluginException(No implementation found for method data on channel plugins.justsoft.xyz/video_thumbnail)
+[ERROR:flutter/lib/ui/window/platform_configuration.cc(448)] Reported frame time is older than the last one; clamping. 80537430052 < 80537445670 ~= 15618
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: ResultsPage AI payload score=74 biomechanics=6 video=http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_vertical.mp4
+flutter: ResultsPage playback local=null network=http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4 skeleton=http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4 overlayReady=true
+flutter: ShotVideoPlayer trying url: http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4
+flutter: ShotVideoPlayer trying url: http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4
+flutter: ShotVideoPlayer trying url: http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: ShotVideoPlayer trying url: http://192.168.1.197:8000/processed/IMG_6766_d8602bfc_analysis.mp4
+flutter: ShotVideoPlayer trying url: http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Session dashboard thumbnail skipped: MissingPluginException(No implementation found for method data on channel plugins.justsoft.xyz/video_thumbnail)
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Table `shots` missing — loading `shot_analysis`.
+
+══╡ EXCEPTION CAUGHT BY FLUTTER FRAMEWORK ╞═════════════════════════════════════════════════════════
+The following assertion was thrown:
+ListTile background color or ink splashes may be invisible.
+The ListTile is wrapped in a DecoratedBox that has a background color. Because ListTile paints its
+background and ink splashes on the nearest Material ancestor, this DecoratedBox will hide those
+effects.
+To fix this, wrap the ListTile in its own Material widget, or remove the background color from the
+intermediate DecoratedBox.
+
+ListTile:
+  ListTile(selectedColor: Color(alpha: 1.0000, red: 1.0000, green: 0.4196, blue: 0.0000, colorSpace: ColorSpace.sRGB), contentPadding: EdgeInsets.zero, onTap: Closure: () => void from Function '_handleValueChange@1102134056':.)
+DecoratedBox:
+  DecoratedBox(bg: BoxDecoration(color: Color(alpha: 1.0000, red: 0.0784, green: 0.0784, blue: 0.1216, colorSpace: ColorSpace.sRGB), border: Border.all(BorderSide(color: Color(alpha: 0.0600, red: 1.0000, green: 1.0000, blue: 1.0000, colorSpace: ColorSpace.sRGB))), borderRadius: BorderRadius.circular(22.0)))
+════════════════════════════════════════════════════════════════════════════════════════════════════
+
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+flutter: ProfileService.loadProfile remote failed: PostgrestException(message: {"code":"PGRST205","details":null,"hint":null,"message":"Could not find the table 'public.player_profiles' in the schema cache"}, code: 404, details: Not Found, hint: null)
+flutter: #0      PostgrestBuilder._parseResponse (package:postgrest/src/postgrest_builder.dart:364:5)
+flutter: #1      PostgrestBuilder._execute (package:postgrest/src/postgrest_builder.dart:198:18)
+flutter: <asynchronous suspension>
+flutter: <asynchronous suspension>
+flutter: 
+flutter: <async call site>
+flutter: #0      PostgrestBuilder.then (package:postgrest/src/postgrest_builder.dart:466:36)
+flutter: #1      ProfileService.loadProfile (package:shootiq/services/profile_service.dart:40:19)
+flutter: #2      _ProfilePageState.initState (package:shootiq/pages/profile_page.dart:103:20)
+flutter: #3      StatefulElement._firstBuild (package:flutter/src/widgets/framework.dart:5950:55)
+flutter: #4      ComponentElement.mount (package:flutter/src/widgets/framework.dart:5793:5)
+flutter: #5      Element.inflateWidget (package:flutter/src/widgets/framework.dart:4587:20)
+flutter: #6      Element.updateChild (package:flutter/src/widgets/framework.dart:4053:20)
+flutter: #7      SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7122:14)
+flutter: #8      Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #9      ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #10     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #11     StatelessElement.update (package:flutter/src/widgets/framework.dart:5895:5)
+flutter: #12     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #13     SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7122:14)
+flutter: #14     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #15     SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7122:14)
+flutter: #16     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #17     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #18     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5982:11)
+flutter: #19     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #20     StatefulElement.update (package:flutter/src/widgets/framework.dart:6007:5)
+flutter: #21     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #22     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #23     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5982:11)
+flutter: #24     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #25     StatefulElement.update (package:flutter/src/widgets/framework.dart:6007:5)
+flutter: #26     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #27     SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7122:14)
+flutter: #28     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #29     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #30     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #31     ProxyElement.update (package:flutter/src/widgets/framework.dart:6149:5)
+flutter: #32     _InheritedNotifierElement.update (package:flutter/src/widgets/inherited_notifier.dart:108:11)
+flutter: #33     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #34     SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7122:14)
+flutter: #35     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #36     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #37     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5982:11)
+flutter: #38     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #39     StatefulElement.update (package:flutter/src/widgets/framework.dart:6007:5)
+flutter: #40     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #41     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #42     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #43     ProxyElement.update (package:flutter/src/widgets/framework.dart:6149:5)
+flutter: #44     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #45     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #46     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #47     ProxyElement.update (package:flutter/src/widgets/framework.dart:6149:5)
+flutter: #48     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #49     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #50     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5982:11)
+flutter: #51     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #52     StatefulElement.update (package:flutter/src/widgets/framework.dart:6007:5)
+flutter: #53     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #54     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #55     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #56     StatelessElement.update (package:flutter/src/widgets/framework.dart:5895:5)
+flutter: #57     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #58     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #59     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #60     StatelessElement.update (package:flutter/src/widgets/framework.dart:5895:5)
+flutter: #61     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #62     SingleChildRenderObjectElement.update (package:flutter/src/widgets/framework.dart:7122:14)
+flutter: #63     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #64     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #65     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #66     ProxyElement.update (package:flutter/src/widgets/framework.dart:6149:5)
+flutter: #67     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #68     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #69     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #70     ProxyElement.update (package:flutter/src/widgets/framework.dart:6149:5)
+flutter: #71     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #72     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #73     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5982:11)
+flutter: #74     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #75     StatefulElement.update (package:flutter/src/widgets/framework.dart:6007:5)
+flutter: #76     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #77     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #78     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5982:11)
+flutter: #79     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #80     StatefulElement.update (package:flutter/src/widgets/framework.dart:6007:5)
+flutter: #81     Element.updateChild (package:flutter/src/widgets/framework.dart:4037:15)
+flutter: #82     ComponentElement.performRebuild (package:flutter/src/widgets/framework.dart:5841:16)
+flutter: #83     StatefulElement.performRebuild (package:flutter/src/widgets/framework.dart:5982:11)
+flutter: #84     Element.rebuild (package:flutter/src/widgets/framework.dart:5529:7)
+flutter: #85     BuildScope._tryRebuild (package:flutter/src/widgets/framework.dart:2750:15)
+flutter: #86     BuildScope._flushDirtyElements (package:flutter/src/widgets/framework.dart:2807:11)
+flutter: #87     BuildOwner.buildScope (package:flutter/src/widgets/framework.dart:3111:18)
+flutter: #88     WidgetsBinding.drawFrame (package:flutter/src/widgets/binding.dart:1571:21)
+flutter: #89     RendererBinding._handlePersistentFrameCallback (package:flutter/src/rendering/binding.dart:509:5)
+flutter: #90     SchedulerBinding._invokeFrameCallback (package:flutter/src/scheduler/binding.dart:1430:15)
+flutter: #91     SchedulerBinding.handleDrawFrame (package:flutter/src/scheduler/binding.dart:1345:9)
+flutter: #92     SchedulerBinding._handleDrawFrame (package:flutter/src/scheduler/binding.dart:1198:5)
+flutter: #93     _invoke (dart:ui/hooks.dart:423:13)
+flutter: #94     PlatformDispatcher._drawFrame (dart:ui/platform_dispatcher.dart:447:5)
+flutter: #95     _drawFrame (dart:ui/hooks.dart:395:31)
+flutter: 
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Session dashboard thumbnail skipped: MissingPluginException(No implementation found for method data on channel plugins.justsoft.xyz/video_thumbnail)
+flutter: ResultsPage AI payload score=74 biomechanics=6 video=http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_vertical.mp4
+flutter: ResultsPage playback local=null network=http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4 skeleton=http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4 overlayReady=true
+flutter: ShotVideoPlayer trying url: http://192.168.1.197:8000/processed/IMG_6766_5fba3b2d_analysis.mp4
+flutter: Table `shots` missing — loading `shot_analysis`.
+flutter: Table `shots` missing — loading `shot_analysis`.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.
+Another exception was thrown: ListTile background color or ink splashes may be invisible.

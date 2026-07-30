@@ -1,0 +1,13 @@
+---
+description: (R) shorthand means run the Flutter app
+alwaysApply: true
+---
+
+# Run App Shorthand
+
+When the user message is `(R)`, `R`, or includes `(R)` as a run request:
+
+1. Run the Flutter app immediately.
+2. Use: `export PATH="$HOME/flutter/bin:$PATH" && flutter run -d macos`
+3. Do not ask for confirmation first.
+4. Prefer macOS unless the user specifies another device.

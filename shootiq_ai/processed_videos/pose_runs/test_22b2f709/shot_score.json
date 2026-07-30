@@ -1,0 +1,61 @@
+{
+  "shots": [
+    {
+      "shooting_side": "right",
+      "load_frame": null,
+      "release_frame": null,
+      "overall_score": null,
+      "confidence": 0.0,
+      "metrics_computed": "0/10",
+      "sections": {
+        "feet_stance": {
+          "label": "Feet & Stance",
+          "score": null,
+          "max_points": 10,
+          "issues": []
+        },
+        "knee_bend": {
+          "label": "Knee Bend",
+          "score": null,
+          "max_points": 15,
+          "issues": []
+        },
+        "ball_position": {
+          "label": "Ball Position",
+          "score": null,
+          "max_points": 15,
+          "issues": []
+        },
+        "elbow_alignment": {
+          "label": "Elbow Alignment",
+          "score": null,
+          "max_points": 20,
+          "issues": []
+        },
+        "shooting_motion": {
+          "label": "Shooting Motion",
+          "score": null,
+          "max_points": 20,
+          "issues": []
+        },
+        "follow_through": {
+          "label": "Follow Through",
+          "score": null,
+          "max_points": 10,
+          "issues": []
+        },
+        "balance": {
+          "label": "Balance",
+          "score": null,
+          "max_points": 10,
+          "issues": []
+        }
+      },
+      "strengths": [],
+      "improvements": [],
+      "overlay_frames": [],
+      "notes": "ball_position is a proxy based on shooting-hand position relative to the head/shoulders, since no ball-tracking model is in this pipeline yet.",
+      "source_file": "/Users/macbook/Projects/shootiq/shootiq_ai/processed_videos/pose_runs/test_22b2f709/shot_angles.json"
+    }
+  ]
+}
