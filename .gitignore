@@ -54,3 +54,4 @@ shootiq_ai/*.pyc
 shootiq_ai/.pytest_cache/
 shootiq_ai/uploads/
 shootiq_ai/processed/
+shootiq_ai/processed_videos/
